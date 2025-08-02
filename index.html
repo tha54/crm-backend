@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>CRM Expert-Comptable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f4; }
+    header { background: #002b5c; color: white; padding: 20px; text-align: center; }
+    nav { background: #003974; display: flex; justify-content: center; padding: 10px 0; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+    section { padding: 30px; text-align: center; }
+    .page { display: none; }
+    .active { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CRM Expert-Comptable</h1>
+    <p>Navigation multi-pages simulée (statique)</p>
+  </header>
+  <nav>
+    <a href="#" onclick="showPage('dashboard')">Tableau de bord</a>
+    <a href="#" onclick="showPage('clients')">Clients</a>
+    <a href="#" onclick="showPage('missions')">Missions</a>
+    <a href="#" onclick="showPage('facturation')">Facturation</a>
+    <a href="#" onclick="showPage('lettre')">Lettre de mission</a>
+  </nav>
+
+  <section>
+    <div id="dashboard" class="page active"><h2>Tableau de bord</h2><p>Vue synthétique de vos indicateurs.</p></div>
+    <div id="clients" class="page"><h2>Clients</h2><p>Gestion de la base client.</p></div>
+    <div id="missions" class="page"><h2>Missions</h2><p>Suivi des missions en cours et prévues.</p></div>
+    <div id="facturation" class="page"><h2>Facturation</h2><p>Émissions de factures et plans de facturation.</p></div>
+    <div id="lettre" class="page"><h2>Lettre de mission</h2><p>Génération de la lettre de mission personnalisée.</p></div>
+  </section>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
